@@ -15,19 +15,11 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
-
-    private static final String DEFAULT_DEPT_NAME = "Training";
     @Autowired
     private EmployeeService employeeService;
-    @Autowired
-    private DepartmentService departmentService;
 
     @PostMapping
     public ResponseEntity<Employee> saveEmployee(@RequestBody final Employee employee) {
-        if (Objects.isNull(employee.getDepartment())) {
-            final Department defaultDept = departmentService.getDepartmentByDeptName(DEFAULT_DEPT_NAME);
-            employee.setDepartment(defaultDept);
-        }
         return new ResponseEntity<Employee>(employeeService.createEmployee(employee), HttpStatus.CREATED);
     }
 

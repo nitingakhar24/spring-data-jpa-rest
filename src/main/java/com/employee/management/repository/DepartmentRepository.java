@@ -4,5 +4,7 @@ import com.employee.management.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
-    Department getDepartmentByDeptName(String deptHead);
+    Department getDepartmentByDeptName(String deptName);
+
+    Department getDepartmentByDeptCode(String depCode);
 }

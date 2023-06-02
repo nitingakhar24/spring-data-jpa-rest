@@ -11,7 +11,6 @@ import java.util.List;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
-
     @Autowired
     private DepartmentRepository departmentRepository;
 
@@ -33,5 +32,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Department getDepartmentByDeptName(final String deptName) {
         return departmentRepository.getDepartmentByDeptName(deptName);
+    }
+
+    @Override
+    public Department getDepartmentByDeptCode(String deptCode) {
+        return  departmentRepository.getDepartmentByDeptCode(deptCode);
     }
 }
