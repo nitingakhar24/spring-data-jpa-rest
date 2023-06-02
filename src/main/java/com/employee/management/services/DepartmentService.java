@@ -1,6 +1,7 @@
 package com.employee.management.services;
 
 import com.employee.management.entity.Department;
+import com.employee.management.entity.DepartmentType;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface DepartmentService {
 
     Department getDepartmentByDeptName(String deptName);
 
-    Department getDepartmentByDeptCode(String deptCode);
+    Department getDepartmentByDeptType(DepartmentType deptType);
 }

@@ -21,8 +21,9 @@ public class Department {
     private Long deptId;
     @Column(name = "department_name")
     private String deptName;
-    @Column(name = "department_code")
-    private String deptCode;
+    @Column(name = "department_type")
+    @Enumerated(EnumType.STRING)
+    private DepartmentType deptType;
     @JsonIgnore
     @OneToMany(mappedBy = "department", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Employee> employees;
@@ -31,20 +32,21 @@ public class Department {
         return deptId;
     }
 
-    public String getDeptCode() {
-        return deptCode;
-    }
-
-    public void setDeptCode(String deptCode) {
-        this.deptCode = deptCode;
-    }
-
     public String getDeptName() {
         return deptName;
     }
 
     public void setDeptName(String deptName) {
         this.deptName = deptName;
+    }
+
+
+    public DepartmentType getDeptType() {
+        return deptType;
+    }
+
+    public void setDeptType(DepartmentType deptType) {
+        this.deptType = deptType;
     }
 
     public List<Employee> getEmployees() {

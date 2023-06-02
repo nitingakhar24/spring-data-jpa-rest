@@ -30,9 +30,4 @@ public class DepartmentController {
     public Department getDepartmentByDeptName(@RequestParam String deptName) {
         return departmentService.getDepartmentByDeptName(deptName);
     }
-
-    @GetMapping(value = "/{deptCode}")
-    public Department getDepartmentByDeptCode(@RequestParam String deptCode) {
-        return departmentService.getDepartmentByDeptCode(deptCode);
-    }
 }
