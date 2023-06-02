@@ -1,6 +1,7 @@
 package com.employee.management.services.impl;
 
 import com.employee.management.entity.Department;
+import com.employee.management.entity.DepartmentType;
 import com.employee.management.exception.ResourceNotFoundException;
 import com.employee.management.repository.DepartmentRepository;
 import com.employee.management.services.DepartmentService;
@@ -35,7 +36,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department getDepartmentByDeptCode(String deptCode) {
-        return  departmentRepository.getDepartmentByDeptCode(deptCode);
+    public Department getDepartmentByDeptType(DepartmentType deptType) {
+        return  departmentRepository.getDepartmentByDeptType(deptType);
     }
 }
