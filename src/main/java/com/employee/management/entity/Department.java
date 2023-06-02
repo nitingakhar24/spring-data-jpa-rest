@@ -21,12 +21,22 @@ public class Department {
     private Long deptId;
     @Column(name = "department_name")
     private String deptName;
+    @Column(name = "department_code")
+    private String deptCode;
     @JsonIgnore
     @OneToMany(mappedBy = "department", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Employee> employees;
 
     public Long getDeptId() {
         return deptId;
+    }
+
+    public String getDeptCode() {
+        return deptCode;
+    }
+
+    public void setDeptCode(String deptCode) {
+        this.deptCode = deptCode;
     }
 
     public String getDeptName() {
@@ -44,4 +54,6 @@ public class Department {
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
+
+
 }
